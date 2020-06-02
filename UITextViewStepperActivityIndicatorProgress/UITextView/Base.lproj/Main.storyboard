@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UITextView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uWV-ul-dlI">
+                                <rect key="frame" x="20" y="142" width="374" height="485"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Управление клавиатурой
+Когда пользователь нажимает в редактируемом текстовом представлении, это текстовое представление становится первым респондентом и автоматически просит систему отобразить связанную клавиатуру. Поскольку внешний вид клавиатуры потенциально может затенить части вашего пользовательского интерфейса, вы должны убедиться, что этого не произойдет, переместив любые виды, которые могут быть затемнены. Некоторые системные представления, такие как представления таблиц, помогают вам, автоматически прокручивая первый респондент. Однако если первый респондент находится в нижней части области прокрутки, вам все равно может потребоваться изменить размер или переместить само представление прокрутки, чтобы убедиться, что первый респондент виден.
+
+Ваше приложение несет ответственность за отклонение клавиатуры во время вашего выбора. Вы можете отклонить клавиатуру в ответ на конкретное действие пользователя, например, нажатие пользователем определенной кнопки в вашем пользовательском интерфейсе. Чтобы закрыть клавиатуру, отправьте сообщение в текстовое представление, которое в данный момент является первым респондентом. Это приводит к тому, что объект текстового представления завершает текущий сеанс редактирования (с согласия объекта делегата) и скрывает клавиатуру.resignFirstResponder()</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gz3-Fi-oE8">
+                                <rect key="frame" x="20" y="87" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="yYd-qk-Rq9">
+                                <rect key="frame" x="279" y="47" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="V5Z-C6-yh2"/>
+                                </connections>
+                            </stepper>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-VF-der">
+                                <rect key="frame" x="197" y="374.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="58k-Zz-cI9">
+                                <rect key="frame" x="20" y="142" width="374" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.86346090715558543" green="0.6545571231398396" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gz3-Fi-oE8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="1BG-Dy-1Ar"/>
+                            <constraint firstItem="yYd-qk-Rq9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="869-dP-RH7"/>
+                            <constraint firstItem="OIT-VF-der" firstAttribute="centerY" secondItem="uWV-ul-dlI" secondAttribute="centerY" id="9Kv-f4-lEt"/>
+                            <constraint firstItem="58k-Zz-cI9" firstAttribute="width" secondItem="uWV-ul-dlI" secondAttribute="width" id="EVx-1T-jjx"/>
+                            <constraint firstItem="58k-Zz-cI9" firstAttribute="top" secondItem="uWV-ul-dlI" secondAttribute="top" id="GHU-0o-Nk6"/>
+                            <constraint firstItem="OIT-VF-der" firstAttribute="centerX" secondItem="uWV-ul-dlI" secondAttribute="centerX" id="R81-pL-fpK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yYd-qk-Rq9" secondAttribute="trailing" constant="41" id="RaD-2D-Ebi"/>
+                            <constraint firstItem="gz3-Fi-oE8" firstAttribute="trailing" secondItem="uWV-ul-dlI" secondAttribute="trailing" id="SCm-KK-6SC"/>
+                            <constraint firstItem="uWV-ul-dlI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Vyl-Pl-9ZX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uWV-ul-dlI" secondAttribute="trailing" constant="20" id="eB0-cq-cmc"/>
+                            <constraint firstItem="uWV-ul-dlI" firstAttribute="top" secondItem="gz3-Fi-oE8" secondAttribute="bottom" constant="34" id="h5H-zb-bLs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uWV-ul-dlI" secondAttribute="bottom" constant="235" id="jQZ-8s-VsW"/>
+                            <constraint firstItem="gz3-Fi-oE8" firstAttribute="leading" secondItem="uWV-ul-dlI" secondAttribute="leading" id="rds-pB-gy2"/>
+                            <constraint firstItem="58k-Zz-cI9" firstAttribute="centerX" secondItem="uWV-ul-dlI" secondAttribute="centerX" id="tPM-nI-Jav"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityOutlet" destination="OIT-VF-der" id="pKp-yV-Q0g"/>
+                        <outlet property="constraintOutlet" destination="jQZ-8s-VsW" id="0DL-6a-XUL"/>
+                        <outlet property="countLabel" destination="gz3-Fi-oE8" id="Yna-a8-tbt"/>
+                        <outlet property="progressOutlet" destination="58k-Zz-cI9" id="4J1-zo-Q18"/>
+                        <outlet property="stepperOutlet" destination="yYd-qk-Rq9" id="r0c-UA-4s9"/>
+                        <outlet property="textViewOutlet" destination="uWV-ul-dlI" id="kj6-78-QVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-367" y="80"/>
+        </scene>
+    </scenes>
+</document>
